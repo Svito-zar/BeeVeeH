@@ -1,3 +1,7 @@
+""" This script can visualize a BVH file frame by frame.
+    Each frame will be visualized in a separate widnow
+    Continuous animation is implemented at 3dAnimation.py"""
+
 import BeeVeeH.bvh_helper as BVH
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -33,6 +37,7 @@ def visualize(root):
     show_frame(root, ax)
     plt.show()
 
+
 if __name__ == '__main__':
 
     file_path = 'tests/bvh_files/0007_Cartwheel001.bvh'
@@ -40,8 +45,10 @@ if __name__ == '__main__':
     print('number of frames = %d' % len(frames))
     # "number of frames = 2111"
 
-    root.load_frame(frames[99])
-    root.apply_transformation()
+    for fr in range(len(frames)):
 
-    # Visualize the frame
-    visualize(root)
+        root.load_frame(frames[fr])
+        root.apply_transformation()
+
+        # Visualize the frame
+        visualize(root)

@@ -2,6 +2,8 @@
     Each frame will be visualized in a separate widnow
     Continuous animation is implemented at 3dAnimation.py"""
 
+#@author: Taras Kucherenko
+
 import BeeVeeH.bvh_helper as BVH
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
